@@ -131,250 +131,250 @@ for ingredient in all_unique_items:
 	
 
 
-	try:
-		type_item_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[2]').text
-		split_type_and_weight = type_item_3.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
+# 	try:
+# 		type_item_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[2]').text
+# 		split_type_and_weight = type_item_3.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
 
-		nutrients_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[3]').text
-		split_three_values = nutrients_3.split('•')
+# 		nutrients_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[3]').text
+# 		split_three_values = nutrients_3.split('•')
 
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
 
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
-
-
-
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
-
-	except Exception as e:
-		# print(data)
-		pass
-
-
-	try:
-		type_item_4 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[2]/div[2]').text
-		split_type_and_weight = type_item_4.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
-
-		nutrients_4 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[2]/div[3]').text
-		split_three_values = nutrients_4.split('•')
-
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
-
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
 
 
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
 
-	except Exception as e:
-		# print(data)
-		pass
-
-
-	try:
-		type_item_5 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[3]/div[2]').text
-		split_type_and_weight = type_item_5.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
-
-		nutrients_5 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[3]/div[3]').text
-		split_three_values = nutrients_5.split('•')
-
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
-
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
 
 
+# 	try:
+# 		type_item_4 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[2]/div[2]').text
+# 		split_type_and_weight = type_item_4.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrients_4 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[2]/div[3]').text
+# 		split_three_values = nutrients_4.split('•')
 
-	except Exception as e:
-		# print(data)
-		pass
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
 
-
-	try:
-		type_item_6 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[4]/div[2]').text
-		split_type_and_weight = type_item_6.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
-
-		nutrients_6 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[4]/div[3]').text
-		split_three_values = nutrients_6.split('•')
-
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
-
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
 
 
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
 
-	except Exception as e:
-		# print(data)
-		pass
-
-
-	try:
-		type_item_7 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[5]/div[2]').text
-		split_type_and_weight = type_item_7.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
-
-		nutrients_7 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[5]/div[3]').text
-		split_three_values = nutrients_7.split('•')
-
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
-
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
 
 
+# 	try:
+# 		type_item_5 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[3]/div[2]').text
+# 		split_type_and_weight = type_item_5.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrients_5 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[3]/div[3]').text
+# 		split_three_values = nutrients_5.split('•')
 
-	except Exception as e:
-		# print(data)
-		pass
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
 
-
-	try:
-		type_item_8 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[6]/div[2]').text
-		split_type_and_weight = type_item_8.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
-
-		nutrients_8 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[6]/div[3]').text
-		split_three_values = nutrients_8.split('•')
-
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
-
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
 
 
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
 
-	except Exception as e:
-		# print(data)
-		pass
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
+
+
+# 	try:
+# 		type_item_6 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[4]/div[2]').text
+# 		split_type_and_weight = type_item_6.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
+
+# 		nutrients_6 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[4]/div[3]').text
+# 		split_three_values = nutrients_6.split('•')
+
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
+
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+
+
+
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
+
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
+
+
+# 	try:
+# 		type_item_7 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[5]/div[2]').text
+# 		split_type_and_weight = type_item_7.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
+
+# 		nutrients_7 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[5]/div[3]').text
+# 		split_three_values = nutrients_7.split('•')
+
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
+
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+
+
+
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
+
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
+
+
+# 	try:
+# 		type_item_8 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[6]/div[2]').text
+# 		split_type_and_weight = type_item_8.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
+
+# 		nutrients_8 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[6]/div[3]').text
+# 		split_three_values = nutrients_8.split('•')
+
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
+
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+
+
+
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
+
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
 		
 
 
-	try:
-		type_item_9 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[7]/div[2]').text
-		split_type_and_weight = type_item_9.split(',')
-		type_of_item = split_type_and_weight[0]
-		quantity = split_type_and_weight[1]
+# 	try:
+# 		type_item_9 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[7]/div[2]').text
+# 		split_type_and_weight = type_item_9.split(',')
+# 		type_of_item = split_type_and_weight[0]
+# 		quantity = split_type_and_weight[1]
 
-		nutrients_9 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[7]/div[3]').text
-		split_three_values = nutrients_9.split('•')
+# 		nutrients_9 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[7]/div[3]').text
+# 		split_three_values = nutrients_9.split('•')
 
-		nutrient_list = []
-		for i in split_three_values:
-			single_nutrient = i.split(":")
-			nutrient_list.append(single_nutrient[0].strip())
-			nutrient_list.append(single_nutrient[1].strip())
+# 		nutrient_list = []
+# 		for i in split_three_values:
+# 			single_nutrient = i.split(":")
+# 			nutrient_list.append(single_nutrient[0].strip())
+# 			nutrient_list.append(single_nutrient[1].strip())
 
-# ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
+# # ['Calories', '357', 'Carbs', '74g', 'Fat', '1g', 'Protein', '11g']
 
 
 
-		nutrient_details = {
-			"Item": ingred,
-			"Type": type_of_item,
-			"Quantity": quantity,
-			"Calories": nutrient_list[1],
-			"Carbohydrate": nutrient_list[3],
-			"Fat": nutrient_list[5],
-			"Protein": nutrient_list[7]
-		}
-		data.append(nutrient_details)
+# 		nutrient_details = {
+# 			"Item": ingred,
+# 			"Type": type_of_item,
+# 			"Quantity": quantity,
+# 			"Calories": nutrient_list[1],
+# 			"Carbohydrate": nutrient_list[3],
+# 			"Fat": nutrient_list[5],
+# 			"Protein": nutrient_list[7]
+# 		}
+# 		data.append(nutrient_details)
 
-	except Exception as e:
-		# print(data)
-		pass
+# 	except Exception as e:
+# 		# print(data)
+# 		pass
 		
 	# all_data.append(data)
 
@@ -385,8 +385,8 @@ driver.close()
 with open('extracted_ingredients.csv', 'w') as data:
 	fieldnames = ['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein']
 	the_writer = csv.DictWriter(data, fieldnames=fieldnames)
-	writer.writeheader()
+	the_writer.writeheader()
 	# the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
 
-	for i in range(len(all_data)):
-		the_writer.writerows({'Item': all_data[i]['Item'], 'Type': all_data[i]['Type'], 'Quantity': all_data[i]['Quantity'], 'Calories': all_data[i]['Calories'], 'Carbohydrate': all_data[i]['Carbohydrate'], 'Fat': all_data[i]['Fat'], 'Protein':all_data[i]['Protein']})
+	for i in range(len(data)):
+		the_writer.writerows({'Item': data[i]['Item'], 'Type': data[i]['Type'], 'Quantity': data[i]['Quantity'], 'Calories': data[i]['Calories'], 'Carbohydrate': data[i]['Carbohydrate'], 'Fat': data[i]['Fat'], 'Protein': data[i]['Protein']})
