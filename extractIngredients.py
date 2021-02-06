@@ -384,8 +384,9 @@ driver.close()
 
 with open('extracted_ingredients.csv', 'w') as data:
 	fieldnames = ['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein']
-	the_writer = csv.writer(data)
-	the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
+	the_writer = csv.DictWriter(data, fieldnames=fieldnames)
+	writer.writeheader()
+	# the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
 
 	for i in range(len(all_data)):
 		the_writer.writerows({'Item': all_data[i]['Item'], 'Type': all_data[i]['Type'], 'Quantity': all_data[i]['Quantity'], 'Calories': all_data[i]['Calories'], 'Carbohydrate': all_data[i]['Carbohydrate'], 'Fat': all_data[i]['Fat'], 'Protein':all_data[i]['Protein']})
