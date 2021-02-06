@@ -20,6 +20,7 @@ with open('indian_food.csv') as indian_food:
 
 data = []
 for ingredient in all_unique_items:
+
 	ingred = ingredient.strip()
 	n_link = driver.get(link + ingred)		## remove whitespace and concat with the link
 	
@@ -131,7 +132,6 @@ for ingredient in all_unique_items:
 
 
 	try:
-		driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 		type_item_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[2]').text
 		split_type_and_weight = type_item_3.split(',')
 		type_of_item = split_type_and_weight[0]
@@ -388,4 +388,4 @@ with open('extracted_ingredients.csv', 'w') as data:
 	the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
 
 	for i in range(len(all_data)):
-		the_writer.writerow({'Item': all_data[i]['Item'], 'Type': all_data[i]['Type'], 'Quantity': all_data[i]['Quantity'], 'Calories': all_data[i]['Calories'], 'Carbohydrate': all_data[i]['Carbohydrate'], 'Fat': all_data[i]['Fat'], 'Protein':all_data[i]['Protein']})
+		the_writer.writerows({'Item': all_data[i]['Item'], 'Type': all_data[i]['Type'], 'Quantity': all_data[i]['Quantity'], 'Calories': all_data[i]['Calories'], 'Carbohydrate': all_data[i]['Carbohydrate'], 'Fat': all_data[i]['Fat'], 'Protein':all_data[i]['Protein']})
