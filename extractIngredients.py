@@ -1,5 +1,6 @@
 import csv
 import time
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
@@ -16,6 +17,7 @@ with open('indian_food.csv') as indian_food:
 	for item in csv_food:
 		all_items = all_items + (item[1].split(","))
 		all_unique_items = list(set(all_items))
+
 
 
 data = []
@@ -382,11 +384,16 @@ print("all_data::", data)
 driver.close()
 
 
-with open('extracted_ingredients.csv', 'w') as data:
-	fieldnames = ['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein']
-	the_writer = csv.DictWriter(data, fieldnames=fieldnames)
-	the_writer.writeheader()
-	# the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
+# data = [{'Item': 'whole egg', 'Type': 'Egg', 'Quantity': ' 1 large', 'Calories': '74', 'Carbohydrate': '0g', 'Fat': '5g', 'Protein': '6g'}, {'Item': 'whole egg', 'Type': 'Egg', 'Quantity': ' 1 egg', 'Calories': '70', 'Carbohydrate': '1g', 'Fat': '5g', 'Protein': '6g'}, {'Item': 'whole egg', 'Type': 'Egg', 'Quantity': ' 1 Egg', 'Calories': '80', 'Carbohydrate': '0g', 'Fat': '6g', 'Protein': '7g'}, {'Item': 'steamer', 'Type': 'Green Gaint Valley Steamer', 'Quantity': ' 0.5 cup', 'Calories': '45', 'Carbohydrate': '8g', 'Fat': '1g', 'Protein': '2g'}, {'Item': 'steamer', 'Type': "Bird's Eye", 'Quantity': ' 1 cup', 'Calories': '50', 'Carbohydrate': '6g', 'Fat': '2g', 'Protein': '2g'}, {'Item': 'steamer', 'Type': 'Generic', 'Quantity': ' 14 clams', 'Calories': '70', 'Carbohydrate': '3g', 'Fat': '4g', 'Protein': '7g'}]
+fieldnames = ['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein']
+try:
+	with open('extracted_ingredients.csv', 'w') as csv_data:
+		
+		the_writer = csv.DictWriter(csv_data, fieldnames=fieldnames)
+		the_writer.writeheader()
+		# the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
 
-	for i in range(len(data)):
-		the_writer.writerows({'Item': data[i]['Item'], 'Type': data[i]['Type'], 'Quantity': data[i]['Quantity'], 'Calories': data[i]['Calories'], 'Carbohydrate': data[i]['Carbohydrate'], 'Fat': data[i]['Fat'], 'Protein': data[i]['Protein']})
+		for item in data:
+			the_writer.writerow(item)
+except IOError:
+    print("I/O error")
