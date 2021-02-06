@@ -18,11 +18,11 @@ with open('indian_food.csv') as indian_food:
 		all_unique_items = list(set(all_items))
 
 
-
+data = []
 for ingredient in all_unique_items:
 	ingred = ingredient.strip()
-	n_link = driver.get(link + 'maida')		## remove whitespace and concat with the link
-	data = []
+	n_link = driver.get(link + ingred)		## remove whitespace and concat with the link
+	
 	time.sleep(5)
 	try:
 		type_item_0 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/div[1]/div[1]/div[2]').text
@@ -56,7 +56,8 @@ for ingredient in all_unique_items:
 
 
 	except Exception as e:
-		print("try0")
+		# print(data)
+		pass
 
 	try:
 		type_item_1 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/div[1]/div[2]/div[2]').text
@@ -90,7 +91,7 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try1")
+		pass
 
 
 	try:
@@ -125,9 +126,12 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try2")
+		pass
+	
+
 
 	try:
+		driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 		type_item_3 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[1]/div[2]').text
 		split_type_and_weight = type_item_3.split(',')
 		type_of_item = split_type_and_weight[0]
@@ -159,7 +163,8 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try3")
+		pass
+
 
 	try:
 		type_item_4 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[2]/div[2]').text
@@ -193,7 +198,8 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try4")
+		pass
+
 
 	try:
 		type_item_5 = driver.find_element_by_xpath('//*[@id="app"]/div/div/div/div[1]/div/section/div[3]/div[2]').text
@@ -227,7 +233,7 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try5")
+		pass
 
 
 	try:
@@ -261,8 +267,8 @@ for ingredient in all_unique_items:
 		data.append(nutrient_details)
 
 	except Exception as e:
-		print(data)
-		print("try6")
+		# print(data)
+		pass
 
 
 	try:
@@ -297,7 +303,7 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try7")
+		pass
 
 
 	try:
@@ -332,7 +338,8 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try8")
+		pass
+		
 
 
 	try:
@@ -367,8 +374,18 @@ for ingredient in all_unique_items:
 
 	except Exception as e:
 		# print(data)
-		print("try9")
-	all_data.append(data)
+		pass
+		
+	# all_data.append(data)
 
-print(all_data)
+print("all_data::", data)
 driver.close()
+
+
+with open('extracted_ingredients.csv', 'w') as data:
+	fieldnames = ['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein']
+	the_writer = csv.writer(data)
+	the_writer.writerow(['Item', 'Type', 'Quantity', 'Calories', 'Carbohydrate', 'Fat', 'Protein'])
+
+	for i in range(len(all_data)):
+		the_writer.writerow({'Item': all_data[i]['Item'], 'Type': all_data[i]['Type'], 'Quantity': all_data[i]['Quantity'], 'Calories': all_data[i]['Calories'], 'Carbohydrate': all_data[i]['Carbohydrate'], 'Fat': all_data[i]['Fat'], 'Protein':all_data[i]['Protein']})
